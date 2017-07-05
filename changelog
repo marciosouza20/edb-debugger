@@ -1,0 +1,5 @@
+edb-debugger (0.9.21-1) unstable; urgency=medium
+
+  * Initial release (Closes: #596571)
+
+ -- Marcio de Souza Oliveira <m.desouza20@gmail.com>  Thu, 27 Apr 2017 03:10:29 +0000

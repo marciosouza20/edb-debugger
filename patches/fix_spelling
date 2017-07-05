@@ -1,0 +1,82 @@
+Description: Fixes spelling errors
+Author: Marcio de Souza Oliveira <m.desouza20@gmail.com>
+Last-Update: 2017-04-30
+
+Index: edb-debugger-0.9.21/src/widgets/QDisassemblyView.cpp
+===================================================================
+--- edb-debugger-0.9.21.orig/src/widgets/QDisassemblyView.cpp
++++ edb-debugger-0.9.21/src/widgets/QDisassemblyView.cpp
+@@ -1099,7 +1099,7 @@ Result<int> QDisassemblyView::get_instru
+ 		}
+ 	}
+ 	
+-	return Result<int>(tr("Failed to get instruciton size"), 0);
++	return Result<int>(tr("Failed to get instruction size"), 0);
+ }
+ 
+ //------------------------------------------------------------------------------
+Index: edb-debugger-0.9.21/src/SymbolManager.cpp
+===================================================================
+--- edb-debugger-0.9.21.orig/src/SymbolManager.cpp
++++ edb-debugger-0.9.21/src/SymbolManager.cpp
+@@ -288,7 +288,7 @@ void SymbolManager::set_label(edb::addre
+ 			QMessageBox::warning(
+ 				edb::v1::debugger_ui,
+ 				QT_TRANSLATE_NOOP("edb", "Duplicate Label"),
+-				QT_TRANSLATE_NOOP("edb", "You are attempting to give two seperate addresses the same label, this is not supported.")
++				QT_TRANSLATE_NOOP("edb", "You are attempting to give two separate addresses the same label, this is not supported.")
+ 				);
+ 			return;
+ 		}
+Index: edb-debugger-0.9.21/plugins/CheckVersion/CheckVersion.cpp
+===================================================================
+--- edb-debugger-0.9.21.orig/plugins/CheckVersion/CheckVersion.cpp
++++ edb-debugger-0.9.21/plugins/CheckVersion/CheckVersion.cpp
+@@ -156,7 +156,7 @@ void CheckVersion::requestFinished(QNetw
+ 		if(!initial_check_) {
+ 			QMessageBox::critical(
+ 				0,
+-				tr("An Error Occured"),
++				tr("An Error Occurred"),
+ 				reply->errorString());
+ 		}
+ 	} else {
+Index: edb-debugger-0.9.21/src/Debugger.cpp
+===================================================================
+--- edb-debugger-0.9.21.orig/src/Debugger.cpp
++++ edb-debugger-0.9.21/src/Debugger.cpp
+@@ -562,10 +562,10 @@ QString Debugger::create_tty() {
+ 					const int rv = select(fd + 1, &set, nullptr, nullptr, &timeout);
+ 					switch(rv) {
+ 					case -1:
+-						qDebug() << "An error occured while attempting to get the TTY of the terminal sub-process";
++						qDebug() << "An error occurred while attempting to get the TTY of the terminal sub-process";
+ 						break;
+ 					case 0:
+-						qDebug() << "A Timeout occured while attempting to get the TTY of the terminal sub-process";
++						qDebug() << "A Timeout occurred while attempting to get the TTY of the terminal sub-process";
+ 						break;
+ 					default:
+ 						read(fd, buf, sizeof(buf));						
+@@ -3384,7 +3384,7 @@ void Debugger::load_session(const QStrin
+ 			QMessageBox::warning(
+ 				this,
+ 				tr("Error Loading Session"),
+-				tr("An error occured while loading session JSON file. %1").arg(error.errorString())
++				tr("An error occurred while loading session JSON file. %1").arg(error.errorString())
+ 				);
+ 
+ 			return;
+Index: edb-debugger-0.9.21/src/lang/edb_en.ts
+===================================================================
+--- edb-debugger-0.9.21.orig/src/lang/edb_en.ts
++++ edb-debugger-0.9.21/src/lang/edb_en.ts
+@@ -1453,7 +1453,7 @@ This is normal if edb has not been previ
+     </message>
+     <message>
+         <location filename="../SymbolManager.cpp" line="247"/>
+-        <source>You are attempting to give two seperate addresses the same label, this is not supported.</source>
++        <source>You are attempting to give two separate addresses the same label, this is not supported.</source>
+         <translation type="unfinished"></translation>
+     </message>
+ </context>
