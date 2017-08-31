@@ -1,3 +1,12 @@
+edb-debugger (0.9.21-2) unstable; urgency=medium
+
+  * debian/control:
+      - Bumped Standards-Version to 4.0.0.
+      - Updated the build to i386 and amd64.
+        Thanks Aaron M. Ucko. (Closes: #873775, #873776)
+
+ -- Marcio de Souza Oliveira <m.desouza20@gmail.com>  Thu, 31 Aug 2017 02:28:29 +0000
+
 edb-debugger (0.9.21-1) unstable; urgency=medium
 
   * Initial release (Closes: #596571)
