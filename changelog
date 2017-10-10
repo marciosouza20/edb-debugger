@@ -1,3 +1,13 @@
+edb-debugger (0.9.21-3) unstable; urgency=medium
+
+  * debian/control:
+      - Bumped Standards-Version to 4.1.1.
+  * debian/patches:
+      - Created the patch fix_default_plugin_path.
+        Thanks Sophie Brun by the patch. Thanks Raphael. (Closes: #876972)
+
+ -- Marcio de Souza Oliveira <m.desouza20@gmail.com>  Tue, 03 Oct 2017 03:29:58 +0000
+
 edb-debugger (0.9.21-2) unstable; urgency=medium
 
   * debian/control:

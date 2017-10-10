@@ -1,0 +1,38 @@
+Description: fix default plugin path
+Author: Sophie Brun <sophie@freexian.com>
+Last-Update: 2017-09-27
+
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -36,7 +36,7 @@ endif()
+ set(GIT_BRANCH "Unknown")
+ add_definitions(-DGIT_BRANCH=${GIT_BRANCH})
+ 
+-add_definitions(-DDEFAULT_PLUGIN_PATH=${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}/edb)
++add_definitions(-DDEFAULT_PLUGIN_PATH=\"${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}/edb\")
+ 
+ include_directories(
+ 	"capstone-edb"
+--- a/src/Configuration.cpp
++++ b/src/Configuration.cpp
+@@ -60,7 +60,7 @@ void Configuration::read_settings() {
+ 
+ 
+ #ifdef DEFAULT_PLUGIN_PATH
+-	const QString default_plugin_path = TOSTRING(DEFAULT_PLUGIN_PATH);
++	const QString default_plugin_path = DEFAULT_PLUGIN_PATH;
+ #else
+ 	const QString edb_lib_dir=QCoreApplication::applicationDirPath()+(EDB_IS_64_BIT ? "/../lib64/edb" : "/../lib/edb");
+ 	const QString edb_binary_dir=QCoreApplication::applicationDirPath();
+--- a/src/src.pro
++++ b/src/src.pro
+@@ -197,7 +197,7 @@ unix {
+ 	DEFINES += GIT_BRANCH=Unknown
+ 
+ 	!isEmpty(DEFAULT_PLUGIN_PATH) {
+-		DEFINES += DEFAULT_PLUGIN_PATH=$$DEFAULT_PLUGIN_PATH
++		DEFINES += DEFAULT_PLUGIN_PATH=\"$$DEFAULT_PLUGIN_PATH\"
+ 	}
+ 	
+ 	VPATH       += $$LEVEL/include/os/unix capstone-edb
+
