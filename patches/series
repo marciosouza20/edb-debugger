@@ -1,4 +1,4 @@
-fix_makefile
-fix_spelling
+#fix_makefile
+fix_spelling.patch
 fix_desktop_entry
-fix_default_plugin_path
+#fix_default_plugin_path

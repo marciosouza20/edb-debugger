@@ -1,4 +1,4 @@
 usr/bin/edb
 usr/share/man/edb.1 usr/share/man/man1/
 usr/share/applications/edb.desktop
-usr/share/pixmaps/edb48-logo.png
+src/images/edb48-logo.png usr/share/pixmaps/

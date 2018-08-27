@@ -1,3 +1,23 @@
+edb-debugger (1.0.0-1) unstable; urgency=medium
+
+  * New upstream release. (Closes: #904567)
+    Thanks Ariel AxionL.
+  * Bumped DH level to 11.
+  * debian/control:
+      - Bumped Standards-Version to 4.2.1.
+      - Updated the Build-Depends.
+  * debian/copyright:
+      - Updated file.
+  * debian/patches:
+      - Disabled the fix_makefile and fix_default_plugin_path patches.
+      - Rename patch fix_spelling to fix_spelling.patch and
+        updated patch.
+  * debian/rules:
+      - Updated file.
+  * Updated the edb-debugger.install file.
+
+ -- Marcio de Souza Oliveira <m.desouza20@gmail.com>  Mon, 27 Aug 2018 01:32:44 +0000
+
 edb-debugger (0.9.21-3) unstable; urgency=medium
 
   * debian/control:

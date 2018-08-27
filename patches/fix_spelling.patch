@@ -1,0 +1,85 @@
+Description: Fixes spelling errors
+Author: Marcio de Souza Oliveira <m.desouza20@gmail.com>
+Last-Update: 2018-08-26
+Index: edb-debugger-1.0.0/plugins/CheckVersion/CheckVersion.cpp
+===================================================================
+--- edb-debugger-1.0.0.orig/plugins/CheckVersion/CheckVersion.cpp
++++ edb-debugger-1.0.0/plugins/CheckVersion/CheckVersion.cpp
+@@ -156,7 +156,7 @@ void CheckVersion::requestFinished(QNetw
+ 		if(!initial_check_) {
+ 			QMessageBox::critical(
+                 nullptr,
+-				tr("An Error Occured"),
++				tr("An Error Occurred"),
+ 				reply->errorString());
+ 		}
+ 	} else {
+Index: edb-debugger-1.0.0/src/Debugger.cpp
+===================================================================
+--- edb-debugger-1.0.0.orig/src/Debugger.cpp
++++ edb-debugger-1.0.0/src/Debugger.cpp
+@@ -652,10 +652,10 @@ QString Debugger::create_tty() {
+ 					const int rv = select(fd + 1, &set, nullptr, nullptr, &timeout);
+ 					switch(rv) {
+ 					case -1:
+-						qDebug() << "An error occured while attempting to get the TTY of the terminal sub-process";
++						qDebug() << "An error occurred while attempting to get the TTY of the terminal sub-process";
+ 						break;
+ 					case 0:
+-						qDebug() << "A Timeout occured while attempting to get the TTY of the terminal sub-process";
++						qDebug() << "A Timeout occurred while attempting to get the TTY of the terminal sub-process";
+ 						break;
+ 					default:
+ 						if(read(fd, buf, sizeof(buf)) != -1) {
+Index: edb-debugger-1.0.0/src/SymbolManager.cpp
+===================================================================
+--- edb-debugger-1.0.0.orig/src/SymbolManager.cpp
++++ edb-debugger-1.0.0/src/SymbolManager.cpp
+@@ -293,7 +293,7 @@ void SymbolManager::set_label(edb::addre
+ 			QMessageBox::warning(
+ 				edb::v1::debugger_ui,
+ 				QT_TRANSLATE_NOOP("edb", "Duplicate Label"),
+-				QT_TRANSLATE_NOOP("edb", "You are attempting to give two seperate addresses the same label, this is not supported.")
++				QT_TRANSLATE_NOOP("edb", "You are attempting to give two separate addresses the same label, this is not supported.")
+ 				);
+ 			return;
+ 		}
+Index: edb-debugger-1.0.0/src/lang/edb_en.ts
+===================================================================
+--- edb-debugger-1.0.0.orig/src/lang/edb_en.ts
++++ edb-debugger-1.0.0/src/lang/edb_en.ts
+@@ -1453,7 +1453,7 @@ This is normal if edb has not been previ
+     </message>
+     <message>
+         <location filename="../SymbolManager.cpp" line="247"/>
+-        <source>You are attempting to give two seperate addresses the same label, this is not supported.</source>
++        <source>You are attempting to give two separate addresses the same label, this is not supported.</source>
+         <translation type="unfinished"></translation>
+     </message>
+ </context>
+Index: edb-debugger-1.0.0/src/session/SessionManager.cpp
+===================================================================
+--- edb-debugger-1.0.0.orig/src/session/SessionManager.cpp
++++ edb-debugger-1.0.0/src/session/SessionManager.cpp
+@@ -54,7 +54,7 @@ bool SessionManager::load_session(const
+     auto doc = QJsonDocument::fromJson(json, &error);
+     if(error.error != QJsonParseError::NoError) {
+         session_error.err = SessionError::UnknownError;
+-        session_error.setErrorMessage(tr("An error occured while loading session JSON file. %1").arg(error.errorString()));
++        session_error.setErrorMessage(tr("An error occurred while loading session JSON file. %1").arg(error.errorString()));
+         return false;
+     }
+ 
+Index: edb-debugger-1.0.0/src/widgets/QDisassemblyView.cpp
+===================================================================
+--- edb-debugger-1.0.0.orig/src/widgets/QDisassemblyView.cpp
++++ edb-debugger-1.0.0/src/widgets/QDisassemblyView.cpp
+@@ -1410,7 +1410,7 @@ Result<int> QDisassemblyView::get_instru
+ 		}
+ 	}
+ 
+-	return Result<int>(tr("Failed to get instruciton size"), 0);
++	return Result<int>(tr("Failed to get instruction size"), 0);
+ }
+ 
+ //------------------------------------------------------------------------------

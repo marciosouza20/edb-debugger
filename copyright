@@ -5,9 +5,10 @@ Source: https://github.com/eteran/edb-debugger
 
 Files: *
 Copyright: 1995-2011 Free Software Foundation, Inc.
-           2006-2016 Evan Teran <evan.teran@gmail.com>
+           2006-2018 Evan Teran <evan.teran@gmail.com>
            2015      Armen Boursalian <aboursalian@gmail.com>
-           2015      Ruslan Kabatsayev <b7.10110111@gmail.com>
+           2015-2017 Ruslan Kabatsayev <b7.10110111@gmail.com>
+           2018      Ivan Sorokin <vanyacpp@gmail.com>
 License: GPL-2+
 
 Files: edb.1
@@ -22,7 +23,7 @@ Copyright: 2006-2013 Evan Teran <evan.teran@gmail.com>
 License: GPL-2 or BSD-2-clause
 
 Files: debian/*
-Copyright: 2017 Marcio de Souza Oliveira <m.desouza20@gmail.com>
+Copyright: 2017-2018 Marcio de Souza Oliveira <m.desouza20@gmail.com>
 License: GPL-2+
 
 License: GPL-2 or GPL-2+
